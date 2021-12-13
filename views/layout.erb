@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>pdxhomes</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+    <form action="create" method='post'>
+        <label for="address">enter pdx address:</label><br>
+        <input type="text" name="address" placeholder="7107 se holgate blvd"><br>
+        <input type="submit" value="run">
+    </form> 
+
+    <%= yield %>
+
+    <p>-</p>
+    <div class="contact">
+        <a href="mailto: somfoucher@gmail.com">contact</a>
+    </div>
+    <div class="copyright">
+        <p>copyright © 2021 pdxhomes</p>
+    </div>
+</body>
+
+</html>
