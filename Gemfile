@@ -1,3 +1,5 @@
+source 'https://rubygems.org'
+
 gem 'sinatra'
 gem 'thin'
 gem "pry", "~> 0.14.1"
