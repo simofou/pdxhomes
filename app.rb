@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'sinatra'
 require 'pry'
 require_relative 'models/home.rb'
