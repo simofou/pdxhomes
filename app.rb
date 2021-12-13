@@ -9,13 +9,6 @@ require_relative 'models/home.rb'
     erb :index
   end
 
-  # post '/create' do
-  #   address = params['address']
-  #   @home = Home.new(address)
-
-  #   erb :create
-  # end
-
   post '/create' do
     address = params['address']
     @home = Home.new(address)
