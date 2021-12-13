@@ -74,16 +74,16 @@ input[type=submit]:focus {
 }
 
 .title {
-  font-weight: bold;
+    font-weight: bold;
 }
 
-.data { 
-  padding-top: 15px;
-  text-align: left;
+.data {
+    padding-top: 15px;
+    text-align: left;
 }
 
 .validation {
-  color: mediumpurple;
-  font-size: 15px;
-  padding-top: 15px;
+    color: mediumpurple;
+    font-size: 15px;
+    padding-top: 15px;
 }
