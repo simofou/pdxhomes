@@ -16,7 +16,7 @@ module ZillowApi
 
   def get_zestimate(location_coordinates, address)
     address = address.upcase
-    url = "https://api.bridgedataoutput.com/api/v2/zestimates"
+    url = "https://api.bridgedataoutput.com/api/v2/zestimates_v2/zestimate"
   
     response ||= Faraday.get(url) do |req|
       req.params['access_token'] = API_KEY 
