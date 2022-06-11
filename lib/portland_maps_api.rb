@@ -114,7 +114,7 @@ module PortlandMapsApi
     response_body = api_response_from(address)
     market_value = response_body["market_value"]
     
-    market_value = market_value&.to_s(:delimited)
+    market_value = market_value&.to_fs(:delimited)
   end
 
   def get_real_market_value(address)
@@ -147,7 +147,7 @@ module PortlandMapsApi
     response_body = api_response_from(address)
     home_size_sqft = response_body["square_feet"]
     
-    home_size_sqft&.to_s(:delimited)
+    home_size_sqft&.to_fs(:delimited)
   end
 
   def get_foundation_type(address)
@@ -158,7 +158,7 @@ module PortlandMapsApi
 
     body = JSON.parse(response.body)
     segments = body["improvements"]["details"].map{|seg| seg["segment_type"]}
-    foundation_type = body["improvements"]["foundation_type"].downcase
+    foundation_type = body["improvements"]["foundation_type"]&.downcase
 
     if foundation_type == "concrete"
       if segments.to_s.include? "BSMT"
