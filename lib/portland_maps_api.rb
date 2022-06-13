@@ -57,6 +57,10 @@ module PortlandMapsApi
     end
   end
 
+  def delimited(number)
+    number&.to_s&.reverse&.gsub(/(\d{3})(?=\d)/, '\\1,')&.reverse
+  end
+
   # Portland Maps methods
   def get_homeowner(address)
     # api call to portland maps to get owner name
@@ -114,7 +118,7 @@ module PortlandMapsApi
     response_body = api_response_from(address)
     market_value = response_body["market_value"]
     
-    market_value = market_value&.to_fs(:delimited)
+    market_value = delimited(market_value)
   end
 
   def get_real_market_value(address)
@@ -147,7 +151,7 @@ module PortlandMapsApi
     response_body = api_response_from(address)
     home_size_sqft = response_body["square_feet"]
     
-    home_size_sqft&.to_fs(:delimited)
+    delimited(home_size_sqft)
   end
 
   def get_foundation_type(address)

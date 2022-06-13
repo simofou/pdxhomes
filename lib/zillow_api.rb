@@ -34,7 +34,7 @@ module ZillowApi
     zillow_home_data.each do |home_data|
       next unless home_data["address"].upcase.include? "#{address}"
       if home_data["zestimate"] != nil
-        zestimate = "#{home_data["zestimate"].to_fs(:delimited)}"
+        zestimate = "#{delimited(home_data["zestimate"])}"
       end
       break
     end
